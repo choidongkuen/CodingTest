@@ -42,14 +42,18 @@ class Solution03{
                     return b - a;
                 }).forEach(sb::append);
 
-        return sb.toString();
+
+        String result = sb.toString();
+        return result.charAt(0) == '0'? "0" : result;
     }
 }
 
 public class Problem02 {
 
     public static void main(String[] args) {
-        int[] numbers = {3,30,34,5,9};
-        System.out.println(new Solution03().solution(numbers));
+        int[] numbers1 = {3,30,34,5,9};
+        int[] numbers2 = {0,0,0,0,0};
+        System.out.println(new Solution03().solution(numbers1));
+        System.out.println(new Solution03().solution(numbers2));
     }
 }
