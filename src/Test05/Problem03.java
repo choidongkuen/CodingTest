@@ -27,6 +27,39 @@
 
 package Test05;
 
+import org.w3c.dom.ls.LSOutput;
 
+class Solution02{
+
+    public int solution(int[] arr){
+
+        int left = 0;
+        int right = arr.length - 1;
+
+        while(left + 1 < right){ // while(left < right) 로 계산한 경우 무한 루프 발생 !
+
+            int mid = left + (right - left) / 2; // (right + left) / 2 -> right 가 매우 크고, left 가 매우 작은 경우 오버플로 발생할 수 있으므로
+
+            if(arr[mid + 1] < arr[mid]){
+                if(arr[mid - 1] < arr[mid]){
+                    return mid;
+                }else{
+                    right = mid;
+                }
+            }else{
+                left = mid;
+            }
+        }
+        return -1;
+    }
+
+}
 public class Problem03 {
+
+    public static void main(String[] args) {
+
+        int[] arr1 = {-3, 0, 3, 4, 5, 12, 15, 14, 12, 11};
+        System.out.println(new Solution02().solution(arr1));
+
+    }
 }

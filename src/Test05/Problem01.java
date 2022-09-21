@@ -28,7 +28,7 @@ package Test05;
 
 import java.util.Arrays;
 
-class Solution{
+class Solution01{
     public boolean solution(String s, String t){
 
         if(s.length() != t.length()){
@@ -57,7 +57,7 @@ public class Problem01 {
         String s = "imfinethankyou";
         String t = "atfhinemnoyuki";
 
-        Solution ans = new Solution();
+        Solution01 ans = new Solution01();
         System.out.println(ans.solution(s,t));
     }
 }
