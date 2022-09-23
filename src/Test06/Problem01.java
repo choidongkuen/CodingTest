@@ -22,6 +22,9 @@
 // 2. 잡은 left ~ right 가 단조증가가 아니라면, left를 right자리로 이동시킨다.(left를 1씩 증가시켜봤자, 단조증가 아니다.)
 // 3. 전형적인 투포인터 문제
 
+// 알고리즘 :
+// Two-Pointer
+
 package Test06;
 
 import java.util.Arrays;
@@ -48,7 +51,7 @@ class Solution01{
                 if(right == values.length)
                     break; // 끝점이 도달한 경우 종료
             }else{ // 해당 left ~ right 가 단조증가 구간이 아닌 경우
-                left = right;
+                left = right ;
             }
         }
         return result;
