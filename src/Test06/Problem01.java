@@ -23,7 +23,7 @@
 // 3. 전형적인 투포인터 문제
 
 // 알고리즘 :
-// Two-Pointer
+// TwoPointer
 
 package Test06;
 
