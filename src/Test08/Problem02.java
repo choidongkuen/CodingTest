@@ -1,97 +1,89 @@
+// problem 02
+
+// 문제 설명 :
+// 누리는 개발 공부를 하다 보니 삽으로 땅을 파는 데에 전문가가 되었다. 누리가 파내는 땅은 블록 형태로 구분되어있고, 각 블록은 제거하는 데에 서로 다른 에너지가 소비된다.
+// 땅에 있는 첫 번째 블록은 깊이가 0부터 시작하며, 한칸씩 내려갈 때 마다 깊이가 1씩 증가한다. 누리가 블록을 제거할 수 있는 조건은 아래와 같다.
+// 깊이 0에 위치한 블록은 자유롭게 제거할 수 있다.
+// 깊이 d에 위치한 i번째 블록을 제거하려면, 깊이 d-1에 위치한 i-1, i, i+1번째 블록 중 하나가 제거되어 있어야 한다.
+// 누리는 깊이 depth의 n번째 블록에 위치한 화석을 발굴하려고 한다. 각 깊이별 블록을 제거하는 데에 필요한 에너지는 blocks에 저장되어 있다.
+// 화석이 위치한 블록을 제거하는 데에 필요한 최소의 에너지를 구하시오. (단, n은 0부터 시작하며, 모든 깊이에는 동일한 숫자의 블록이 있다.)
+
+// 입력 설명 :
+//0 <= depth <= 10000
+//0 <= n < blocks[i].length
+//0 < blocks[i].length <= 10000
+//0 < blocks[i][j] <= 100
+
+// 매개변수 형식 :
+// depth = 3
+// n = 3
+// blocks = {{5, 6, 2, 6},{1, 6, 4, 9},{5, 6, 9, 4},{55, 14, 21, 14}}
+
+// 반환값 형식 :
+// 24
+
+// 점수 : 16점
 package Test08;
 
-import java.io.IOException;
-import java.util.*;
-
-//1개의 업무가 있다면 그 업무를 하는 것이 돈을 버는 일이고 
-//2개의 업무가 있다면 겹치지 않으면 2개를 하는 것이 좋고 겹친다면 더 비싼 업무를 하는 것이 좋다.
-//i번째 작업을 선택하지 않거나 선택한 것 중 최대값 
-//i번째 작업을 선택하는 경우에는 i번째 작업의 비용과 i번째 작업과 겹치지 않는 작업의 최대값의 합
-//dp[i] = Max(dp[i-1], getMaxCost(i) + c[i])
+import java.util.Arrays;
 
 public class Problem02{
+    public static final int MAX_DEPTH = 10000;
+    public static final int DIR = 3;
 
-    static class Task implements Comparable<Task> {
-        int s;
-        int e;
-        int c;
+    public static int N; // 행
+    public static int M; // 열
+    public static int[][] dp;
 
-        public Task(int s, int e, int c) {
-            this.s = s;
-            this.e = e;
-            this.c = c;
+    public static int[] dx = {-1,-1,-1};
+    public static int[] dy = {-1,0,1};
+
+    public static boolean checkRange(int x, int y){
+        return x >= 0 && x < N && y >= 0 && y < M;
+    }
+
+    public static int solution(int depth, int n, int[][] blocks){
+
+        N = depth + 1; // 3 + 1
+        M = blocks[0].length; // 4
+        dp = new int[N][M];
+
+        for(int[] sub : dp){
+            Arrays.fill(sub, Integer.MAX_VALUE);
         }
 
-        @Override
-        public int compareTo(Task o) {
-            // TODO Auto-generated method stub
-            // 우선 종료 일자 기준으로 정렬하고 종료 일자가 동일하면 시작 일자 기준으로 정렬
-            if (this.e == o.e) {
-                return this.s - o.s;
-            } else {
-                return this.e - o.e;
+        for (int i = 0; i < M ; i++) {
+            dp[0][i] = blocks[0][i];
+        }
+
+        for (int i = 1; i < N ; i++) {
+            for (int j = 0; j < M ; j++) {
+
+                for (int d = 0; d < DIR ; d++) {
+                    int preX = i + dx[d];
+                    int preY = j + dy[d];
+
+                    if(checkRange(preX,preY)){
+                        dp[i][j] = Math.min(dp[i][j],dp[preX][preY]);
+                    }
+                }
+
+                dp[i][j] += blocks[i][j];
             }
         }
+
+        return dp[depth][n];
+
     }
 
-    static int N;
-    static int M;
-    static ArrayList<Task> task;
-    static int[] dp;
+    public static void main(String[] args) {
 
-    public static void test(int[] start, int[] end, int[] price) {
+        int[][] blocks = {{5,6,2,6},{1,6,4,9},{5,6,9,4},{55,14,21,14}};
+        int depth = 3;
+        int n = 3;
 
-        // N개의 업무 dp
-        dp = new int[N];
-        Arrays.fill(dp, 0);
+        System.out.println(solution(depth,n,blocks));
+        System.out.println(Arrays.deepToString(dp));
 
-        // task 를 종료일, 시작일 순서로 정렬
-        task.sort(Comparator.naturalOrder());
-
-        // 첫번째 작업의 비용
-        dp[0] = task.get(0).c;
-
-        for (int i = 1; i < N; i++) {
-            dp[i] = Math.max(dp[i - 1], getMaxCost(i) + task.get(i).c);
-        }
-
-        System.out.println(dp[N - 1]);
-    }
-
-    // n번째 작업과 겹치지 않는 마지막 시점까지의 최대값 찾기
-    public static int getMaxCost(int n) {
-
-        int ret = 0;
-        int idx = -1;
-
-        // n번째 작업과 겹치지 않는 마지막 시점까지의 최대값 찾기
-        for (int i = 0; i < n; i++) {
-            // 겹치면 중지
-            if (task.get(i).e > task.get(n).s) {
-                break;
-            }
-            idx = i;
-        }
-
-        // 겹치지 않는 작업의 최대값
-        if (idx >= 0) {
-            ret = dp[idx];
-        }
-
-        return ret;
-    }
-
-    public static void main(String[] args) throws NumberFormatException, IOException {
-        int[] start = {1,5,10,6,5};
-        int[] end = {5,6,12,9,12};
-        int[] price = {10,40,30,20,50};
-
-        task = new ArrayList<>();
-        N = start.length;
-
-        for(int i = 0; i < start.length; i ++){
-            task.add(new Task(start[i],end[i],price[i]));
-        } // 인스턴스 배열 설정
-        test(start, end ,price);
     }
 }

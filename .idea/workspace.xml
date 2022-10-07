@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c5448412-ddac-40a2-9b84-fea319b1a6e6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Test08/Problem01.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Test08/Problem02.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Test08/Problem03.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Test08/Problem04.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Test07/Problem03.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test07/Problem03.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Test08/Problem01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test08/Problem01.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Test08/Problem02.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test08/Problem02.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Test08/Problem03.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test08/Problem03.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +41,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.Problem01">
+  <component name="RunManager" selected="Application.Test08.Problem02">
     <configuration name="Problem01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Test08.Problem01" />
       <module name="CodingTest" />
@@ -111,11 +109,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Test08.Problem02" />
+        <item itemvalue="Application.Problem03" />
         <item itemvalue="Application.Problem01" />
         <item itemvalue="Application.Test08.Problem01" />
-        <item itemvalue="Application.Problem03" />
         <item itemvalue="Application.Test08.Problem02 (2)" />
-        <item itemvalue="Application.Test08.Problem02" />
       </list>
     </recent_temporary>
   </component>

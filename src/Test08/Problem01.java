@@ -25,6 +25,7 @@
 // 6~9 (20)
 // 10~12 (30)
 
+// 점수 : 20점
 package Test08;
 
 import java.io.InputStream;
@@ -78,7 +79,7 @@ public class Problem01 {
                 // dp[i] = 현재 예약을 하지 않는 것(기존 결정이 더 이득인 경우)
                 // dp[i] = 특정 순간 얻을 수 있는 최대 cost
                 // 점점 update(시간이 겹치지 않는다면)
-                // end 순으로 정렬하지 않으면 dp 테이블이 업데이트 되지 않음
+                // end 순으로 정렬하지 않으면 dp 테이블 업데이트 되지 않음
             }
         }
 
