@@ -2,18 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c5448412-ddac-40a2-9b84-fea319b1a6e6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Test10/Problem01.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Test10/Problem02.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Test10/Problem03.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Test10/Problem04.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Test10/Problem05.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Test11/Problem01.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Test11/Problem02.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Test11/Problem03.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Test11/Problem04.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Test11/Problem05.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Test08/Problem04.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test08/Problem04.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Test12/Problem01.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Test12/Problem02.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Test12/Problem03.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Test12/Problem04.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Test12/Problem05.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,15 +34,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/DongKuen/Desktop/GitHub/CodingTestUltimate/src",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "Errors"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="Test11" />
       <recent name="Test10" />
@@ -138,8 +137,23 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1663783450111</updated>
+      <workItem from="1667554827392" duration="702000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
